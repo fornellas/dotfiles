@@ -8,7 +8,6 @@ alias egrep='egrep --color'
 alias rgrep='rgrep --color'
 alias rsync='rsync -a  -H --delete -rlKHpEtS --delete --delete-excluded --force -z -v'
 alias pstree='pstree -aAclnpu'
-alias chrome='google-chrome'
 if [ $UID -eq 0 ]
 then
   alias ls='ls --color -a'
@@ -24,6 +23,7 @@ alias atom='atom -n'
 alias chrome='google-chrome'
 alias be="bundle exec"
 alias dotfiles='git --git-dir="$HOME"/src/dotfiles --work-tree="$HOME"'
+alias root='sudo bash --rcfile "$HOME"/.bashrc'
 
 # colored prompt
 . ~/bin/ansi.sh
