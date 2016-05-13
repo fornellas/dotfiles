@@ -1,0 +1,26 @@
+[user]
+	email = fabio.ornellas@gmail.com
+	name = Fabio Pugliese Ornellas
+[push]
+	default = simple
+[color]
+	ui = auto
+[http]
+	sslVerify = false
+[core]
+	excludesfile = /home/fornellas/.gitignore
+[credential]
+	helper = store
+[alias]
+	aa = add -A
+	pull = pull --rebase
+	co = checkout
+	ci = commit
+	st = status
+	df = diff
+	ds = diff --staged
+	br = branch
+	lg = log --graph --oneline --decorate --all
+	type = cat-file -t
+	dump = cat-file -p
+	up = fetch -p

@@ -1,0 +1,21 @@
+"*":
+  "autocomplete-plus":
+    useAlternateScoring: false
+  core:
+    autoHideMenuBar: true
+  editor:
+    fontSize: 19
+    invisibles: {}
+    softWrap: true
+  "exception-reporting":
+    userId: "df1f8312-7b1e-3ef3-a049-e6af254a8143"
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  "seeing-is-believing":
+    "ruby-command": "ruby"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
