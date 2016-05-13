@@ -4,11 +4,19 @@ function ansi_display_sequence_ps1() {
 
 PS1_STATUS="\$(
   RET=\$?
-  if [ \$RET -ne 0 ]
+  if [ \$RET -eq 0 ]
   then
-    echo -ne '$(ansi_display_sequence_ps1 $ANSI_DISPLAY_ATTR_BRIGHT $ANSI_DISPLAY_FG_RED)'
-    echo \"(Exit \$RET) \"
-#    echo "\\n"
+    echo -ne '$(
+      ansi_display_sequence_ps1 \
+        $ANSI_DISPLAY_ATTR_BRIGHT \
+        $ANSI_DISPLAY_FG_GREEN
+      )✔'
+  else
+    echo -ne '$(
+    ansi_display_sequence_ps1 \
+    $ANSI_DISPLAY_ATTR_BRIGHT \
+    $ANSI_DISPLAY_FG_RED
+    )✘'
   fi
   )"
 
@@ -31,7 +39,7 @@ PS1_HOSTNAME="$(eval "ansi_display_sequence_ps1 \
 PS1_COLON="$(ansi_display_sequence_ps1 $ANSI_DISPLAY_ATTR_BRIGHT $ANSI_DISPLAY_FG_WHITE):"
 PS1_PWD="$(ansi_display_sequence_ps1)\\w"
 PS1_END="$(ansi_display_sequence_ps1 $ANSI_DISPLAY_ATTR_BRIGHT $ANSI_DISPLAY_FG_WHITE)\\\$"
-GIT_PS1_SHOWDIRTYSTATE=true 
+GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 GIT_PS1_SHOWUPSTREAM="auto"
