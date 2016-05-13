@@ -32,6 +32,12 @@
   'alt-ctrl-n': 'seeing-is-believing:annotate-magic-comments'
   'alt-ctrl-v': 'seeing-is-believing:remove-annotations'
 
+'body':
+  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab ^ctrl': 'unset!'
+  'ctrl-shift-tab': 'pane:show-previous-item'
+
 # For Windows and Linux
 '.platform-win32, .platform-linux':
   # Create an empty split pane
