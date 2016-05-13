@@ -50,6 +50,7 @@ PS1_COLON="$(ansi_display_sequence_ps1 $ANSI_DISPLAY_ATTR_BRIGHT $ANSI_DISPLAY_F
 PS1_PWD="$(ansi_display_sequence_ps1)\\w"
 
 # Git status
+source /usr/lib/git-core/git-sh-prompt
 GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
