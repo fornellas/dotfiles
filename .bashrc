@@ -24,6 +24,7 @@ alias chrome='google-chrome'
 alias be="bundle exec"
 alias dotfiles='git --git-dir="$HOME"/src/dotfiles --work-tree="$HOME"'
 alias root='sudo bash --rcfile "$HOME"/.bashrc'
+alias 808='mplayer tv:// -tv width=1280:height=720'
 
 # colored prompt
 . ~/bin/ansi.sh
@@ -41,7 +42,7 @@ then
   cd
 fi
 
-function mkbkp () { 
+function mkbkp () {
     cp -ai "$1" "$1".$(date +%Y%m%d%H%M%S)
 }
 
