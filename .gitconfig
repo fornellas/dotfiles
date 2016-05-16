@@ -1,8 +1,6 @@
 [user]
 	email = fabio.ornellas@gmail.com
 	name = Fabio Pugliese Ornellas
-[push]
-	default = simple
 [color]
 	ui = auto
 [http]
