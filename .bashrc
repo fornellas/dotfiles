@@ -21,14 +21,18 @@ else
 fi
 alias atom='atom -n'
 alias chrome='google-chrome'
-alias be="bundle exec"
 alias dotfiles='git --git-dir="$HOME"/src/dotfiles --work-tree="$HOME"'
 alias root='sudo bash --rcfile "$HOME"/.bashrc'
 alias 808='mplayer tv:// -tv width=1280:height=720'
 
+# Ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+alias be="bundle exec"
+
 # colored prompt
-. ~/bin/ansi.sh
-. ~/bin/ps1.sh
+. /home/fornellas/bin/ansi.sh
+. /home/fornellas/bin/ps1.sh
 
 # Editor
 export EDITOR=vim
