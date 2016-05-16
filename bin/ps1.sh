@@ -51,7 +51,7 @@ PS1_PWD="$(ansi_display_sequence_ps1)\\w"
 
 # Git status
 GIT_SH_PROMPT="/usr/lib/git-core/git-sh-prompt"
-if [ -f "GIT_SH_PROMPT" ] ; then
+if [ -f "$GIT_SH_PROMPT" ] ; then
   source /usr/lib/git-core/git-sh-prompt
 fi
 if type __git_ps1 &>/dev/null ; then
