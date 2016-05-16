@@ -1,0 +1,2 @@
+set hls
+syntax on
