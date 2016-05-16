@@ -50,13 +50,20 @@ PS1_COLON="$(ansi_display_sequence_ps1 $ANSI_DISPLAY_ATTR_BRIGHT $ANSI_DISPLAY_F
 PS1_PWD="$(ansi_display_sequence_ps1)\\w"
 
 # Git status
-source /usr/lib/git-core/git-sh-prompt
-GIT_PS1_SHOWDIRTYSTATE=true
-GIT_PS1_SHOWSTASHSTATE=true
-GIT_PS1_SHOWUNTRACKEDFILES=true
-GIT_PS1_SHOWUPSTREAM="auto"
-GIT_PS1_SHOWCOLORHINTS=true
-PS1_GIT="$(ansi_display_sequence_ps1 $ANSI_DISPLAY_ATTR_BRIGHT $ANSI_DISPLAY_FG_WHITE)\$(__git_ps1)"
+GIT_SH_PROMPT="/usr/lib/git-core/git-sh-prompt"
+if [ -f "GIT_SH_PROMPT" ] ; then
+  source /usr/lib/git-core/git-sh-prompt
+fi
+if type __git_ps1 &>/dev/null ; then
+  GIT_PS1_SHOWDIRTYSTATE=true
+  GIT_PS1_SHOWSTASHSTATE=true
+  GIT_PS1_SHOWUNTRACKEDFILES=true
+  GIT_PS1_SHOWUPSTREAM="auto"
+  GIT_PS1_SHOWCOLORHINTS=true
+  PS1_GIT="$(ansi_display_sequence_ps1 $ANSI_DISPLAY_ATTR_BRIGHT $ANSI_DISPLAY_FG_WHITE)\$(__git_ps1)"
+else
+  PS1_GIT=""
+fi
 
 # $/#
 PS1_END="$(ansi_display_sequence_ps1 $ANSI_DISPLAY_ATTR_BRIGHT $ANSI_DISPLAY_FG_WHITE)\\\$"

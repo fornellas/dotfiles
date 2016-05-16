@@ -21,13 +21,23 @@ else
 fi
 alias atom='atom -n'
 alias chrome='google-chrome'
-alias dotfiles='git --git-dir="$HOME"/src/dotfiles --work-tree="$HOME"'
 alias root='sudo bash --rcfile "$HOME"/.bashrc'
 alias 808='mplayer tv:// -tv width=1280:height=720'
 
+# Dotfiles
+DOTFILES_LOCAL_REPO="$HOME/src/dotfiles.git"
+DOTFILES_REMOTE_REPO="https://github.com/fornellas/dotfiles.git"
+if ! [ -d "$DOTFILES_LOCAL_REPO" ] ; then
+  git clone --bare "$DOTFILES_REMOTE_REPO" "$DOTFILES_LOCAL_REPO"
+  echo '*' >> "$DOTFILES_LOCAL_REPO/info/exclude"
+fi
+alias dotfiles='git --git-dir="$DOTFILES_LOCAL_REPO" --work-tree="$HOME"'
+
 # Ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -d "$HOME/.rbenv" ] ; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 alias be="bundle exec"
 
 # colored prompt
