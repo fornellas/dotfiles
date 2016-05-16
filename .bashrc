@@ -8,12 +8,12 @@ alias egrep='egrep --color'
 alias rgrep='rgrep --color'
 alias rsync='rsync -a  -H --delete -rlKHpEtS --delete --delete-excluded --force -z -v'
 alias pstree='pstree -aAclnpu'
-if [ $UID -eq 0 ]
-then
+if [ $UID -eq 0 ] ; then
   alias ls='ls --color -a'
   alias l='ls --color -lha'
   alias 1='ls -1a'
   alias rm='rm -i'
+  alias root='sudo bash --rcfile "$HOME"/.bashrc'
 else
   alias ls='ls --color'
   alias l='ls --color -lh'
@@ -21,17 +21,16 @@ else
 fi
 alias atom='atom -n'
 alias chrome='google-chrome'
-alias root='sudo bash --rcfile "$HOME"/.bashrc'
 alias 808='mplayer tv:// -tv width=1280:height=720'
 
 # Dotfiles
 DOTFILES_LOCAL_REPO="$HOME/src/dotfiles.git"
 DOTFILES_REMOTE_REPO="https://github.com/fornellas/dotfiles.git"
-if ! [ -d "$DOTFILES_LOCAL_REPO" ] ; then
+if ! [ -d "$DOTFILES_LOCAL_REPO" ] && [ $UID -ne 0 ]; then
   git clone --bare "$DOTFILES_REMOTE_REPO" "$DOTFILES_LOCAL_REPO"
   echo '*' >> "$DOTFILES_LOCAL_REPO/info/exclude"
+  alias dotfiles='git --git-dir="$DOTFILES_LOCAL_REPO" --work-tree="$HOME"'
 fi
-alias dotfiles='git --git-dir="$DOTFILES_LOCAL_REPO" --work-tree="$HOME"'
 
 # Ruby
 if [ -d "$HOME/.rbenv" ] ; then
