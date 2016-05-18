@@ -10,16 +10,19 @@
 [credential]
 	helper = store
 [alias]
+	cb   = checkout -b
+	fuck = push -f
 	aa   = add -A
 	pull = pull --rebase
 	co   = checkout
-	ci   = commit
+	cm   = commit
+	cma  = commit -a
 	st   = status
 	df   = diff
 	ds   = diff --staged
 	br   = branch
-	lgo  = log --graph --oneline --decorate --all
-	lg   = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)'
+	lg  = log --graph --oneline --decorate --all
+	lga   = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)'
 	lgs  = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)%n' --stat
 	type = cat-file -t
 	dump = cat-file -p
