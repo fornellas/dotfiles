@@ -22,6 +22,7 @@ fi
 alias atom='atom -n'
 alias chrome='google-chrome'
 alias 808='mplayer tv:// -tv width=1280:height=720'
+alias whatismypublicipaddress="curl 'https://api.ipify.org/' && echo"
 
 # Dotfiles
 DOTFILES_LOCAL_REPO="$HOME/src/dotfiles.git"
