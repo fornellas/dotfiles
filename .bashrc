@@ -8,6 +8,7 @@ alias egrep='egrep --color'
 alias rgrep='rgrep --color'
 alias rsync='rsync -a  -H --delete -rlKHpEtS --delete --delete-excluded --force -z -v'
 alias pstree='pstree -aAclnpu'
+alias tailf='tail --follow=name'
 if [ $UID -eq 0 ] ; then
   alias ls='ls --color -a'
   alias l='ls --color -lha'
