@@ -67,6 +67,10 @@ function gc_docker() {
   for id in $(docker images | grep -E '<none> +<none>' | gawk '{print $3}') ; do docker rmi $id ; done
 }
 
+function pwgen() {
+  /usr/bin/pwgen --no-capitalize --numerals --symbols --ambiguous -1 "$@" 8 100000 | grep -iE '^([!@#$%12345"<>pyaoeui][&*()67890fgcrldhtns^])+$'
+}
+
 for BASHRC in "$HOME"/.bashrc.d/*.sh
 do
   [ -f "$BASHRC" ] || continue
