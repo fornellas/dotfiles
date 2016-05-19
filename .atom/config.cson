@@ -4,13 +4,19 @@
   core:
     autoHideMenuBar: true
   editor:
-    fontSize: 19
+    fontSize: 15
     invisibles: {}
     softWrap: true
   "exception-reporting":
     userId: "df1f8312-7b1e-3ef3-a049-e6af254a8143"
   minimap:
     plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
   "seeing-is-believing":
