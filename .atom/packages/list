@@ -3,6 +3,8 @@ aligner-ruby
 autocomplete-plus
 cucumber
 file-icons
+git-plus
+git-status
 git-time-machine
 highlight-selected
 indent-guide-improved
@@ -10,13 +12,12 @@ keyboard-scroll
 language-docker
 language-haml
 language-puppet
-list
+merge-conflicts
 minimap
 minimap-bookmarks
 minimap-cursorline
 minimap-find-and-replace
 minimap-highlight-selected
-README.md
 rspec3-snippets
 ruby-block-converter
 seeing-is-believing
