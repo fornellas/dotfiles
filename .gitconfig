@@ -10,22 +10,23 @@
 [credential]
 	helper = store
 [alias]
-	cb   = checkout -b
-	fuck = push -f
-	aa   = add -A
-	pull = pull --rebase
-	co   = checkout
-	cm   = commit
-	cma  = commit -a
-	st   = status
-	df   = diff
-	ds   = diff --staged
-	br   = branch
-	lg  = log --graph --oneline --decorate --all
-	lga   = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)'
-	lgs  = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)%n' --stat
-	type = cat-file -t
-	dump = cat-file -p
-	up   = fetch -p
+	aa      = add -A
+	br      = branch
+	cb      = checkout -b
+	cm      = commit
+	cma     = commit -a
+	co      = checkout
+	df      = diff
+	ds      = diff --staged
+	dump    = cat-file -p
+	fuck    = push -f
+	lg      = log --graph --oneline --decorate --all
+	lga     = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)'
+	lgs     = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)%n' --stat
+	pull    = pull --rebase
+	st      = status
+	type    = cat-file -t
+	unstage = reset HEAD
+	up      = fetch -p
 [push]
 	default = simple
