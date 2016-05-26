@@ -16,11 +16,13 @@
 	cm      = commit
 	cma     = commit -a
 	co      = checkout
+	cpk     = cherry-pick
 	df      = diff
 	ds      = diff --staged
 	dump    = cat-file -p
 	fuck    = push -f
 	lg      = log --graph --oneline --decorate --all
+	lgc     = log --graph --oneline --decorate
 	lga     = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)'
 	lgs     = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)%n' --stat
 	pull    = pull --rebase
@@ -30,3 +32,5 @@
 	up      = fetch -p
 [push]
 	default = simple
+[merge]
+    tool = meld
