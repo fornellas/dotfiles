@@ -21,6 +21,7 @@ else
   alias l='ls --color -lh'
   alias 1='ls -1'
 fi
+alias g='git'
 alias atom='atom -n'
 alias chrome='google-chrome'
 alias 808='mplayer tv:// -tv width=1280:height=720'
