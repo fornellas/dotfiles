@@ -24,6 +24,7 @@
 	lg      = log --graph --oneline --decorate --all
 	lgc     = log --graph --oneline --decorate
 	lga     = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)'
+	lgp     = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)%n' --stat -p
 	lgs     = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)%n' --stat
 	pull    = pull --rebase
 	st      = status
