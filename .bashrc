@@ -45,8 +45,10 @@ if [ -d "$HOME/.rbenv" ] ; then
 fi
 alias be="bundle exec"
 
-# colored prompt
-. /home/fornellas/bin/ansi.sh
+# ANSI Terminal functions
+. /home/fornellas/bin/ansi_terminal.sh
+
+# PS1
 . /home/fornellas/bin/ps1.sh
 
 # Editor
