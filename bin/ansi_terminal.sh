@@ -28,15 +28,11 @@ ANSI_DISPLAY_ATTR_BG_MAGENTA="45"
 ANSI_DISPLAY_ATTR_BG_CYAN="46"
 ANSI_DISPLAY_ATTR_BG_WHITE="47"
 
-function ansi_attr_by_name() {
-  eval "echo -n \$ANSI_DISPLAY_ATTR_$1"
-}
-
 function ansi_set_attr() {
   ATTRIBUTES=""
   while [ $# -ge 1 ]
   do
-    ATTRIBUTES="${ATTRIBUTES}$(ansi_attr_by_name "$1")"
+    ATTRIBUTES="${ATTRIBUTES}$(eval "echo -n \$ANSI_DISPLAY_ATTR_$1")"
     if [ $# -gt 1 ]
     then
       ATTRIBUTES="${ATTRIBUTES};"
