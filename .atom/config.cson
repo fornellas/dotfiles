@@ -4,6 +4,8 @@
   core:
     autoHideMenuBar: true
   editor:
+    fontFamily: "Input"
+    fontSize: 16
     invisibles: {}
     softWrap: true
   "exception-reporting":
