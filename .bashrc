@@ -23,6 +23,7 @@ else
 fi
 alias g='git'
 alias atom='atom -n'
+alias a='atom -n'
 alias chrome='google-chrome'
 alias c='google-chrome'
 alias 808='mplayer tv:// -tv width=1280:height=720'
