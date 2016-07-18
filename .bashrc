@@ -47,6 +47,10 @@ if [ -d "$HOME/.rbenv" ] ; then
 fi
 alias be="bundle exec"
 
+function rrr() {
+  rerun -p '{{lib,spec}/**/*.rb,*.rdoc}' -- "$@"
+}
+
 # ANSI Terminal functions
 . /home/fornellas/bin/ansi_terminal.sh
 
