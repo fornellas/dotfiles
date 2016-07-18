@@ -20,6 +20,7 @@ else
   alias l='ls --color -lh'
   alias 1='ls -1'
 fi
+alias d='docker'
 alias g='git'
 alias atom='atom -n'
 alias a='atom -n'
