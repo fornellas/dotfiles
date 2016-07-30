@@ -26,6 +26,7 @@ alias atom='atom -n'
 alias a='atom -n'
 alias chrome='google-chrome'
 alias c='google-chrome'
+alias nload='nload -a 100 -i 100000 -o 100000 -t 100 -u m -u m'
 alias 808='mplayer tv:// -tv width=1280:height=720'
 alias whatismypublicipaddress="curl 'https://api.ipify.org/' && echo"
 
