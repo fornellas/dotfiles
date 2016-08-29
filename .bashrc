@@ -47,6 +47,8 @@ if [ -d "$HOME/.rbenv" ] ; then
   eval "$(rbenv init -)"
 fi
 alias be="bundle exec"
+alias b='bundle'
+alias r='bundle exec rake'
 
 function rrr() {
   rerun -p '{{lib,spec}/**/*.rb,*.rdoc}' -- "$@"
