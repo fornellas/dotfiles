@@ -90,3 +90,13 @@ do
   [ -f "$BASHRC" ] || continue
   source "$BASHRC"
 done
+
+# Python
+if type pyenv &> /dev/null
+then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+  alias p=python
+fi
