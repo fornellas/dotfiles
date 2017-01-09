@@ -3,10 +3,38 @@
     useAlternateScoring: false
   core:
     autoHideMenuBar: true
+    automaticallyUpdate: false
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "TARGETS"
+        "cconf"
+        "cinc"
+        "ctw"
+        "mcconf"
+        "tw"
+        "thrift-cvalidator"
+        "BUCK"
+      ]
+    disabledPackages: [
+      "fuzzy-finder"
+      "metrics"
+      "tree-view"
+    ]
+    openEmptyEditorOnStart: false
+    telemetryConsent: "limited"
   editor:
     fontFamily: "Input"
     fontSize: 16
     invisibles: {}
+    scrollPastEnd: true
     softWrap: true
   "exception-reporting":
     userId: "df1f8312-7b1e-3ef3-a049-e6af254a8143"
