@@ -32,6 +32,8 @@
 	type    = cat-file -t
 	unstage = reset HEAD
 	f       = fetch -pP
+	list-ignored = clean -xdn
+	clean-ignored = clean -xdf
 [push]
 	default = simple
 [merge]
