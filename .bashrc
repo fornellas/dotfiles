@@ -158,3 +158,7 @@ then
   eval "$(pyenv virtualenv-init -)"
   alias p=python
 fi
+
+alias rrp='rerun -p "**/*.py" -- '
+alias rrc='rerun -p "**/*.{c,h}" --'
+alias rrcpp='rerun -p "**/*.{c,h,cpp}" --'
