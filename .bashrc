@@ -34,7 +34,7 @@ alias spass='/usr/bin/pwgen -cnys1 15'
 
 # Dotfiles
 DOTFILES_LOCAL_REPO="$HOME/src/dotfiles.git"
-DOTFILES_REMOTE_REPO="https://github.com/fornellas/dotfiles.git"
+DOTFILES_REMOTE_REPO="git@github.com:fornellas/dotfiles.git"
 if ! [ -d "$DOTFILES_LOCAL_REPO" ] && [ $UID -ne 0 ] ; then
   git clone --bare "$DOTFILES_REMOTE_REPO" "$DOTFILES_LOCAL_REPO"
   echo '*' >> "$DOTFILES_LOCAL_REPO/info/exclude"
