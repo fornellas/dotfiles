@@ -59,6 +59,13 @@ function rrr() {
 # ANSI Terminal functions
 . /home/fornellas/bin/ansi_terminal.sh
 
+function logrun() {
+  ansi_set_attr BRIGHT FG_CYAN
+  echo ">" "$@"
+  ansi_set_attr RESET
+  "$@"
+}
+
 # PS1
 . /home/fornellas/bin/ps1.sh
 
