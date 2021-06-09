@@ -21,7 +21,6 @@ else
   alias 1='ls -1'
 fi
 alias d='docker'
-alias g='git'
 alias atom='atom -n'
 alias a='atom -n'
 alias chrome='google-chrome'
@@ -31,6 +30,24 @@ alias 808='mplayer tv:// -tv width=1280:height=720'
 alias whatismypublicipaddress="curl 'https://api.ipify.org/' && echo"
 alias findd="find . ! -type d -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\\n' | sort"
 alias spass='/usr/bin/pwgen -cnys1 15'
+
+# Git
+alias g='git'
+function git_author() {
+  for f in $(git ls-files "$@")
+  do
+    git blame -f $f | \
+      cut -d\( -f2- | \
+      cut -d- -f-1 | \
+      gawk 'BEGIN{FS=" +[0-9]+$"}{print $1}'
+  done | \
+    sort | \
+    uniq -c | \
+    sort -k +1n | \
+    sed -r 's/^ +//g' | \
+    gawk '{c=$1;TOTAL=TOTAL+c;FS="^[0-9]+ ";$0=$0;u=$2;FS=" ";USER[u]=c}END{for(u in USER){print int(USER[u]/TOTAL*100)"% "u}}' | \
+    sort -k+1n
+}
 
 # Dotfiles
 DOTFILES_LOCAL_REPO="$HOME/src/dotfiles.git"
