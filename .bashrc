@@ -48,6 +48,9 @@ function git_author() {
     gawk '{c=$1;TOTAL=TOTAL+c;FS="^[0-9]+ ";$0=$0;u=$2;FS=" ";USER[u]=c}END{for(u in USER){print int(USER[u]/TOTAL*100)"% "u}}' | \
     sort -k+1n
 }
+function gdf() {
+  git diff "$1" | grep ^diff | gawk '{print $(NF-1)}' | cut -d/ -f2-
+}
 
 # Dotfiles
 DOTFILES_LOCAL_REPO="$HOME/src/dotfiles.git"
