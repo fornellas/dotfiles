@@ -63,6 +63,12 @@ if [ $UID -ne 0 ] ; then
   alias dotfiles='git --git-dir="$DOTFILES_LOCAL_REPO" --work-tree="$HOME"'
 fi
 
+# Go
+function gosetversion () {
+  export GOROOT="$(go$1 env GOROOT)"
+  export PATH="$GOROOT/bin:$PATH"
+}
+
 # Ruby
 if [ -d "$HOME/.rbenv" ] ; then
   export PATH="$HOME/.rbenv/bin:$PATH"
