@@ -66,6 +66,7 @@ fi
 # Go
 function gosetversion () {
   export GOROOT="$(go$1 env GOROOT)"
+  export GOPATH="$(go$1 env GOPATH)"
   export PATH="$GOROOT/bin:$PATH"
 }
 
