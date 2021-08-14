@@ -160,5 +160,5 @@ then
 fi
 
 alias rrp='rerun -p "**/*.py" -- '
-alias rrc='rerun -p "**/*.{c,h}" --'
+alias rrc='rerun -p "**/*.{c,h,am,ac}" --'
 alias rrcpp='rerun -p "**/*.{c,h,cpp}" --'
