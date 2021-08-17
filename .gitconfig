@@ -21,6 +21,7 @@
 	ds      = diff --staged
 	dump    = cat-file -p
 	fuck    = push -f
+	l	= log --oneline --decorate
 	lg      = log --graph --oneline --decorate --all
 	lgc     = log --graph --oneline --decorate
 	lga     = log --graph --abbrev-commit --all --pretty=format:'%C(auto)%h %d %s (%Cgreen%an%Creset, %ar)'
