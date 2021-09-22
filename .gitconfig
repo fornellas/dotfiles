@@ -31,7 +31,7 @@
 	st      = status
 	type    = cat-file -t
 	unstage = reset HEAD
-	up      = fetch -p
+	f       = fetch -pP
 [push]
 	default = simple
 [merge]
