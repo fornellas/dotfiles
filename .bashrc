@@ -65,9 +65,31 @@ fi
 
 # Go
 function gosetversion () {
-  export GOROOT="$(go$1 env GOROOT)"
-  export GOPATH="$(go$1 env GOPATH)"
-  export PATH="$GOROOT/bin:$PATH"
+  VERSION="$1"
+  INSTALL_PREFIX="$HOME/sdk"
+  INSTALL_PATH_TMP="$INSTALL_PREFIX/go"
+  INSTALL_PATH="$INSTALL_PREFIX/go$VERSION"
+  if ! [ -d "$INSTALL_PATH" ]
+  then
+    if ! rm -rf "$INSTALL_PATH_TMP"
+    then
+      echo "Error removing $INSTALL_PATH_TMP"
+      return 1
+    fi
+    if ! { wget -qO- https://golang.org/dl/go"$VERSION".linux-amd64.tar.gz | tar -C "$INSTALL_PREFIX" -zx ; }
+    then
+      echo "Failed to download & unpack!"
+      return 1
+    fi
+    if ! mv "$INSTALL_PATH_TMP" "$INSTALL_PATH"
+    then
+      echo "Error renaming."
+      return 1
+    fi
+  fi
+  export GOPATH="$HOME/go/$VERSION"
+  export PATH="$INSTALL_PATH/bin:$PATH"
+  export PATH="$GOPATH/bin:$PATH"
 }
 
 # Ruby
