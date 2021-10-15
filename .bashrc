@@ -1,3 +1,6 @@
+HISTSIZE=-1
+HISTFILESIZE=-1
+
 # aliases
 alias ccze='ccze -A'
 alias cp='cp -ai'
