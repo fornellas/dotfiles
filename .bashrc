@@ -55,6 +55,10 @@ function gdf() {
   git diff "$1" | grep ^diff | gawk '{print $(NF-1)}' | cut -d/ -f2-
 }
 
+function git_clean_local_branches() {
+  for branch in $(((git branch --remotes --format '%(refname)' | cut -d/ -f4- && git branch --format '%(refname)' | grep ^refs/heads/ | cut -d/ -f3- ) | sort | uniq -u && git branch --format '%(refname)' | grep ^refs/heads/ | cut -d/ -f3-)  | sort | uniq -d) ; do logrun git branch -D $branch ; done
+}
+
 # Dotfiles
 DOTFILES_LOCAL_REPO="$HOME/src/dotfiles.git"
 DOTFILES_REMOTE_REPO="git@github.com:fornellas/dotfiles.git"
