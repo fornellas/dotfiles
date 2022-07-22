@@ -169,3 +169,6 @@ fi
 alias rrp='rerun -p "**/*.py" -- '
 alias rrc='rerun -p "**/*.{c,h,am,ac}" --'
 alias rrcpp='rerun -p "**/*.{c,h,cpp}" --'
+
+# brew
+eval "$(/home/fornellas/.linuxbrew/bin/brew shellenv)"
