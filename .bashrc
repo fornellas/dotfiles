@@ -171,4 +171,6 @@ alias rrc='rerun -p "**/*.{c,h,am,ac}" --'
 alias rrcpp='rerun -p "**/*.{c,h,cpp}" --'
 
 # brew
-eval "$(/home/fornellas/.linuxbrew/bin/brew shellenv)"
+if test -x /home/fornellas/.linuxbrew/bin/brew ; then
+  eval "$(/home/fornellas/.linuxbrew/bin/brew shellenv)"
+fi
