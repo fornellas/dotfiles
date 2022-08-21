@@ -113,7 +113,7 @@ function rrr() {
 }
 
 # ANSI Terminal functions
-. /home/fornellas/bin/ansi_terminal.sh
+. "$HOME"/bin/ansi_terminal.sh
 
 function logrun() {
   ansi_set_attr BRIGHT FG_CYAN
@@ -123,7 +123,7 @@ function logrun() {
 }
 
 # PS1
-. /home/fornellas/bin/ps1.sh
+. "$HOME"/bin/ps1.sh
 
 # Editor
 export EDITOR=vim
@@ -171,6 +171,6 @@ alias rrc='rerun -p "**/*.{c,h,am,ac}" --'
 alias rrcpp='rerun -p "**/*.{c,h,cpp}" --'
 
 # brew
-if test -x /home/fornellas/.linuxbrew/bin/brew ; then
-  eval "$(/home/fornellas/.linuxbrew/bin/brew shellenv)"
+if test -x "$HOME"/.linuxbrew/bin/brew ; then
+  eval "$("$HOME"/.linuxbrew/bin/brew shellenv)"
 fi
