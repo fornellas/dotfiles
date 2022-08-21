@@ -6,7 +6,7 @@
 [http]
 	sslVerify = false
 [core]
-	excludesfile = /home/fornellas/.gitignore
+	excludesfile = $HOME/.gitignore
 [credential]
 	helper = store
 [alias]
