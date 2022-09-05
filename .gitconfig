@@ -7,6 +7,7 @@
 	sslVerify = false
 [core]
 	excludesfile = $HOME/.gitignore
+	editor = subl -n -w
 [credential]
 	helper = store
 [alias]
