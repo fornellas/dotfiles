@@ -112,8 +112,15 @@ function rrr() {
   rerun -p '{{lib,spec}/**/*.rb,*.rdoc}' -- "$@"
 }
 
+# bin path
+if [ -n "$SUDO_USER" ] ; then
+  BIN_PATH="$(getent passwd "$SUDO_USER" | cut -d: -f6)/bin"
+else
+  BIN_PATH="$HOME"/bin
+fi
+
 # ANSI Terminal functions
-. "$HOME"/bin/ansi_terminal.sh
+. "$BIN_PATH"/ansi_terminal.sh
 
 function logrun() {
   ansi_set_attr BRIGHT FG_CYAN
@@ -123,7 +130,7 @@ function logrun() {
 }
 
 # PS1
-. "$HOME"/bin/ps1.sh
+. "$BIN_PATH"/ps1.sh
 
 # Editor
 export EDITOR=vim
