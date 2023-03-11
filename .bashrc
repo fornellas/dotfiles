@@ -33,6 +33,7 @@ alias 808='mplayer tv:// -tv width=1280:height=720'
 alias whatismypublicipaddress="curl 'https://api.ipify.org/' && echo"
 alias findd="find . ! -type d -printf '%TY-%Tm-%Td %TH:%TM:%TS %p\\n' | sort"
 alias spass='/usr/bin/pwgen -cnys1 15'
+alias dmesg='sudo dmesg -H'
 
 # Git
 alias g='git'
