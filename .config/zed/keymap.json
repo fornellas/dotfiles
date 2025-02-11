@@ -15,8 +15,8 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-shift-up": "editor::MoveLineUp",
-      "ctrl-shift-down": "editor::MoveLineDown"
+      "ctrl-shift-enter": "editor::NewlineAbove",
+      "shift-enter": "editor::NewlineBelow"
     }
   }
 ]
