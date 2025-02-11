@@ -181,3 +181,8 @@ alias rrcpp='rerun -p "**/*.{c,h,cpp}" --'
 if test -x "$HOME"/.linuxbrew/bin/brew ; then
   eval "$("$HOME"/.linuxbrew/bin/brew shellenv)"
 fi
+
+alias deepseek-r1='ollama run deepseek-r1:14b'
+alias deepseek-coder-v2='deepseek-coder-v2:16b'
+alias z='zed -n'
+alias zp='zed -n .'
