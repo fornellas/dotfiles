@@ -36,6 +36,7 @@
 	clean-ignored = clean -xdf
 [push]
 	default = simple
+	autoSetupRemote = true
 [merge]
     tool = meld
 [rerere]
