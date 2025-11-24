@@ -9,14 +9,17 @@
   {
     "context": "Workspace",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
+      "alt-left": "pane::GoBack",
+      "alt-right": "pane::GoForward"
     }
   },
   {
     "context": "Editor",
     "bindings": {
       "ctrl-shift-enter": "editor::NewlineAbove",
-      "shift-enter": "editor::NewlineBelow"
+      "shift-enter": "editor::NewlineBelow",
+      "ctrl-shift-m": "diagnostics::Deploy",
+      "ctrl-f12": "editor::GoToTypeDefinition"
     }
   }
 ]

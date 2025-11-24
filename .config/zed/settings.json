@@ -7,27 +7,180 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "assistant": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
-    },
-    "version": "2"
+  "context_servers": {
+    "godoc-mcp": {
+      "source": "custom",
+      "command": "go",
+      "args": ["run", "github.com/mrjoshuak/godoc-mcp@latest"]
+    }
+    // "mcp-language-server": {
+    //   "source": "custom",
+    //   "command": "go",
+    //   "args": ["run", "github.com/isaacphi/mcp-language-server@latest"]
+    // },
+    // "godoc-mcp-server": {
+    //   "source": "custom",
+    //   "command": "go",
+    //   "args": [
+    //     "run",
+    //     "github.com/yikakia/godoc-mcp-server/cmd/godoc-mcp-server@latest"
+    //   ]
+    // },
+    // "mcp-gopls": {
+    //   "enabled": true,
+    //   "source": "custom",
+    //   "command": "go",
+    //   "args": ["tool", "github.com/hloiseaufcms/mcp-gopls/cmd/mcp-gopls"]
+    // }
   },
+  // "format_on_save": "off",
+  "language_models": {
+    "ollama": {
+      "api_url": "http://127.0.0.1:11434"
+      // "available_models": [
+      //   {
+      //     "display_name": "dolphin-llama3 (8k / 8B)",
+      //     "name": "dolphin-llama3:8b-v2.9-q4_0",
+      //     "max_tokens": 8192,
+      //     "supports_tools": false
+      //   },
+      //   // does not support tools error
+      //   {
+      //     "display_name": "deepseek-r1 (128k / 1.5B)",
+      //     "name": "deepseek-r1:1.5b-qwen-distill-fp16",
+      //     "max_tokens": 131072,
+      //     "supports_tools": true
+      //   },
+      //   // does not make use of tools
+      //   {
+      //     "display_name": "granite3.1-moe (128k / 1B)",
+      //     "name": "granite3.1-moe:1b-instruct-fp16",
+      //     "max_tokens": 131072,
+      //     "supports_tools": true
+      //   },
+      //   // does not make use of tools
+      //   {
+      //     "display_name": "mistral (32k / 7B)",
+      //     "name": "mistral:7b-instruct-v0.3-q6_K",
+      //     "max_tokens": 32768,
+      //     "supports_tools": true
+      //   },
+      //   {
+      //     "display_name": "qwen2.5 (32k / 7B)",
+      //     "name": "qwen2.5:7b-instruct-q8_0",
+      //     "max_tokens": 32768,
+      //     "supports_tools": true
+      //   },
+      //   // does not make use of tools
+      //   {
+      //     "display_name": "qwen2.5-coder (32k / 7B)",
+      //     "name": "qwen2.5-coder:7b-instruct-q8_0",
+      //     "max_tokens": 32768,
+      //     "supports_tools": true
+      //   },
+      //   // thinking mixes with output
+      //   {
+      //     "display_name": "qwen3 (40k / 4B)",
+      //     "name": "qwen3:4b-q4_K_M",
+      //     "max_tokens": 40960,
+      //     "supports_tools": true
+      //   }
+      // ]
+    }
+  },
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-thinking-latest"
+    },
+    "profiles": {
+      "write": {
+        "name": "Write",
+        "tools": {
+          "copy_path": true,
+          "create_directory": true,
+          "create_file": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "grep": true,
+          "terminal": true,
+          "thinking": true,
+          "web_search": true
+        },
+        "enable_all_context_servers": true,
+        "context_servers": {
+          "godoc-mcp": {
+            "tools": {
+              "get_doc": true
+            }
+          }
+        }
+      },
+      "minimal": {
+        "name": "Minimal",
+        "tools": {},
+        "enable_all_context_servers": false,
+        "context_servers": {
+          "godoc-mcp": {
+            "tools": {
+              "get_doc": true
+            }
+          }
+        }
+      },
+      "ask": {
+        "name": "Ask",
+        "tools": {
+          "contents": true,
+          "diagnostics": true,
+          "fetch": true,
+          "list_directory": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "open": true,
+          "grep": true,
+          "thinking": true,
+          "web_search": true
+        },
+        "enable_all_context_servers": false,
+        "context_servers": {
+          "godoc-mcp": {
+            "tools": {
+              "get_doc": true
+            }
+          }
+        }
+      }
+    },
+    "default_profile": "ask",
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-thinking-latest"
+    }
+  },
+  "show_edit_predictions": true,
+  "edit_predictions": {
+    "mode": "subtle"
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "icon_theme": "Material Icon Theme",
   "base_keymap": "SublimeText",
-  // "features": {
-  //   "inline_completion_provider": "supermaven"
-  // },
   "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "buffer_font_size": 16.0,
   "git": {
     "inline_blame": {
       "enabled": false
-    }
-  },
-  "language_models": {
-    "ollama": {
-      "low_speed_timeout_in_seconds": 120
     }
   },
   "theme": {
