@@ -15,7 +15,7 @@
 	br      = branch
 	cb      = checkout -b
 	cm      = commit
-	cma     = commit -a
+	cma     = commit --amend
 	co      = checkout
 	cpk     = cherry-pick
 	df      = diff
